@@ -7,13 +7,28 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Solutions Juridiques au Costa Rica",
+    "pretitle": "Clare Facio Legal",
+    "title_before": "Solutions Juridiques au",
+    "title_highlight": "Costa Rica",
     "subtitle": "Experts en droit des sociétés, de l'immigration et de l'immobilier pour les investisseurs et entreprises internationaux.",
     "cta_primary": "Nous contacter",
     "cta_secondary": "En savoir plus"
   },
   "whycr": {
-    "title": "Pourquoi le Costa Rica ?"
+    "title": "Pourquoi le Costa Rica ?",
+    "subtitle": "Une destination privilégiée pour investir et établir des entreprises dans les Amériques, soutenue par des décennies de stabilité.",
+    "reason1_title": "Stabilité Démocratique",
+    "reason1_desc": "Plus de 75 ans de démocratie ininterrompue, reconnue comme la plus solide et stable de toute l'Amérique centrale.",
+    "reason2_title": "Sécurité Économique",
+    "reason2_desc": "Transactions internationales avec une forte parité au dollar, offrant confiance et prévisibilité financière aux investisseurs.",
+    "reason3_title": "Système Juridique Robuste",
+    "reason3_desc": "Pouvoir judiciaire indépendant, État de droit consolidé et protection effective de la propriété privée et des investissements.",
+    "reason4_title": "Position Stratégique",
+    "reason4_desc": "Au cœur des Amériques, avec un accès privilégié aux marchés d'Amérique du Nord, centrale et du Sud.",
+    "reason5_title": "Haute Qualité de Vie",
+    "reason5_desc": "Mondialement reconnue pour sa biodiversité, sa durabilité environnementale et son indice de développement humain élevé.",
+    "reason6_title": "Ouverture à l'Investissement",
+    "reason6_desc": "Cadre juridique favorable aux investisseurs étrangers avec les mêmes conditions que les ressortissants nationaux."
   },
   "about": {
     "title": "Notre Équipe",

@@ -7,13 +7,28 @@
     "contact": "Contáctenos"
   },
   "hero": {
-    "title": "Soluciones Legales en Costa Rica",
+    "pretitle": "Clare Facio Legal",
+    "title_before": "Soluciones Legales en",
+    "title_highlight": "Costa Rica",
     "subtitle": "Expertos en derecho corporativo, migratorio e inmobiliario para inversores y empresas internacionales.",
     "cta_primary": "Contáctenos",
     "cta_secondary": "Conocer más"
   },
   "whycr": {
-    "title": "¿Por qué Costa Rica?"
+    "title": "¿Por qué Costa Rica?",
+    "subtitle": "Un destino privilegiado para invertir y establecer negocios en las Américas, respaldado por décadas de estabilidad.",
+    "reason1_title": "Estabilidad Democrática",
+    "reason1_desc": "Más de 75 años de democracia ininterrumpida, reconocida como la más sólida y estable de toda Centroamérica.",
+    "reason2_title": "Seguridad Económica",
+    "reason2_desc": "Transacciones internacionales con paridad monetaria frente al dólar, ofreciendo confianza y predictibilidad financiera.",
+    "reason3_title": "Sistema Legal Robusto",
+    "reason3_desc": "Poder judicial independiente, Estado de Derecho consolidado y protección efectiva de la propiedad privada y las inversiones.",
+    "reason4_title": "Posición Estratégica",
+    "reason4_desc": "En el corazón de las Américas, con acceso privilegiado a mercados de Norte, Centro y Sudamérica.",
+    "reason5_title": "Alta Calidad de Vida",
+    "reason5_desc": "Reconocida mundialmente por su biodiversidad, sostenibilidad ambiental y alto índice de desarrollo humano.",
+    "reason6_title": "Apertura a la Inversión",
+    "reason6_desc": "Marco legal favorable para inversionistas extranjeros con las mismas condiciones que los nacionales."
   },
   "about": {
     "title": "Nuestro Equipo",
