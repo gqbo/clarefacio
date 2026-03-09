@@ -118,23 +118,6 @@ export default function Navbar() {
                 </a>
               ))}
 
-              <div className="flex items-center gap-2 pt-4">
-                {routing.locales.map((loc) => (
-                  <button
-                    key={loc}
-                    onClick={() => switchLocale(loc)}
-                    className={`px-3 py-1.5 text-xs tracking-[0.15em] uppercase font-medium border rounded transition-colors ${
-                      loc === locale
-                        ? "border-[#c41e28] text-[#c41e28]"
-                        : "border-white/20 text-[#f5f0eb]/50 hover:border-white/40 hover:text-[#f5f0eb]"
-                    }`}
-                    style={{ fontFamily: "var(--font-dm-sans)" }}
-                  >
-                    {localeLabels[loc]}
-                  </button>
-                ))}
-              </div>
-
               <a
                 href="#contacto"
                 onClick={() => setMobileOpen(false)}
