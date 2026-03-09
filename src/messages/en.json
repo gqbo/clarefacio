@@ -17,19 +17,13 @@
   },
   "whycr": {
     "title": "Why Costa Rica?",
-    "subtitle": "A privileged destination for investment and business in the Americas, backed by decades of proven stability.",
-    "reason1_title": "Democratic Stability",
-    "reason1_desc": "Over 75 years of uninterrupted democracy, recognized as the most solid and stable in all of Central America.",
-    "reason2_title": "Economic Security",
-    "reason2_desc": "International transactions with strong dollar parity, providing confidence and financial predictability for investors.",
-    "reason3_title": "Robust Legal System",
-    "reason3_desc": "Independent judiciary, consolidated Rule of Law, and effective protection of private property and investments.",
-    "reason4_title": "Strategic Location",
-    "reason4_desc": "At the heart of the Americas, with privileged access to North, Central, and South American markets.",
-    "reason5_title": "High Quality of Life",
-    "reason5_desc": "World-renowned for its biodiversity, environmental sustainability, and high human development index.",
-    "reason6_title": "Open to Investment",
-    "reason6_desc": "Favorable legal framework for foreign investors with equal conditions to those of nationals."
+    "body_p1": "51,000 km² of nature, scenic beauty, warm and welcoming people.",
+    "body_p2": "Our country serves as a bridge between the two Americas and is bathed by two oceans — two gifts that have made it home to more than 6% of the planet's biodiversity.",
+    "body_p3": "Alongside these unmatched biological and geographical conditions, 5,000,000 Costa Ricans live their days beneath the peaceful skies of a country that abolished its army over 70 years ago, allowing those once-military funds to be redirected toward health and education.",
+    "body_p4": "Perhaps the most socially and politically stable country in Latin America — with a world-class healthcare system, one of the highest democracy indexes on the planet, and a 99% literacy rate — Costa Rica is simply the perfect destination.",
+    "stat_biodiversity": "of world biodiversity",
+    "stat_democracy": "years of democracy",
+    "stat_literacy": "literacy rate"
   },
   "about": {
     "title": "Our Team",

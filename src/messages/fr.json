@@ -17,19 +17,13 @@
   },
   "whycr": {
     "title": "Pourquoi le Costa Rica ?",
-    "subtitle": "Une destination privilégiée pour investir et établir des entreprises dans les Amériques, soutenue par des décennies de stabilité.",
-    "reason1_title": "Stabilité Démocratique",
-    "reason1_desc": "Plus de 75 ans de démocratie ininterrompue, reconnue comme la plus solide et stable de toute l'Amérique centrale.",
-    "reason2_title": "Sécurité Économique",
-    "reason2_desc": "Transactions internationales avec une forte parité au dollar, offrant confiance et prévisibilité financière aux investisseurs.",
-    "reason3_title": "Système Juridique Robuste",
-    "reason3_desc": "Pouvoir judiciaire indépendant, État de droit consolidé et protection effective de la propriété privée et des investissements.",
-    "reason4_title": "Position Stratégique",
-    "reason4_desc": "Au cœur des Amériques, avec un accès privilégié aux marchés d'Amérique du Nord, centrale et du Sud.",
-    "reason5_title": "Haute Qualité de Vie",
-    "reason5_desc": "Mondialement reconnue pour sa biodiversité, sa durabilité environnementale et son indice de développement humain élevé.",
-    "reason6_title": "Ouverture à l'Investissement",
-    "reason6_desc": "Cadre juridique favorable aux investisseurs étrangers avec les mêmes conditions que les ressortissants nationaux."
+    "body_p1": "51 000 km² de nature, de beauté panoramique, de gens chaleureux et accueillants.",
+    "body_p2": "Notre pays sert de pont entre les deux Amériques et est baigné par deux océans — deux dons qui en ont fait le foyer de plus de 6 % de la biodiversité de la planète.",
+    "body_p3": "À côté de ces conditions biologiques et géographiques incomparables, 5 000 000 de Costariciens vivent leurs jours sous les cieux paisibles d'un pays qui a aboli son armée il y a plus de 70 ans, ce qui permet de consacrer ces anciens fonds militaires à la santé et à l'éducation.",
+    "body_p4": "Peut-être le pays le plus stable socialement et politiquement d'Amérique latine — avec un système de santé de premier ordre, l'un des indices de démocratie les plus élevés de la planète et un taux d'alphabétisation de 99 % — le Costa Rica est tout simplement la destination parfaite.",
+    "stat_biodiversity": "de la biodiversité mondiale",
+    "stat_democracy": "ans de démocratie",
+    "stat_literacy": "de taux d'alphabétisation"
   },
   "about": {
     "title": "Notre Équipe",
