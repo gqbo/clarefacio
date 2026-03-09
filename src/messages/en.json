@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "visual": "Clare Facio Visual",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Legal Solutions in Costa Rica",
+    "subtitle": "Experts in corporate, immigration, and real estate law for international investors and companies.",
+    "cta_primary": "Contact Us",
+    "cta_secondary": "Learn More"
+  },
+  "whycr": {
+    "title": "Why Costa Rica?"
+  },
+  "about": {
+    "title": "Our Team",
+    "subtitle": "Specialized attorneys with international experience",
+    "meet_team": "Meet the team",
+    "learn_more": "View profile"
+  },
+  "services": {
+    "title": "Our Services"
+  },
+  "blog": {
+    "title": "Our Blog",
+    "read_more": "Read more"
+  },
+  "visual": {
+    "title": "Clare Facio Visual"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email address",
+    "message": "Message",
+    "send": "Send"
+  },
+  "newsletter": {
+    "title": "Subscribe to our newsletter",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

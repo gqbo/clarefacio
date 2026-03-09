@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "about": "À propos",
+    "services": "Services",
+    "blog": "Blog",
+    "visual": "Clare Facio Visual",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Solutions Juridiques au Costa Rica",
+    "subtitle": "Experts en droit des sociétés, de l'immigration et de l'immobilier pour les investisseurs et entreprises internationaux.",
+    "cta_primary": "Nous contacter",
+    "cta_secondary": "En savoir plus"
+  },
+  "whycr": {
+    "title": "Pourquoi le Costa Rica ?"
+  },
+  "about": {
+    "title": "Notre Équipe",
+    "subtitle": "Avocats spécialisés avec une expérience internationale",
+    "meet_team": "Rencontrer l'équipe",
+    "learn_more": "Voir le profil"
+  },
+  "services": {
+    "title": "Nos Services"
+  },
+  "blog": {
+    "title": "Notre Blog",
+    "read_more": "Lire la suite"
+  },
+  "visual": {
+    "title": "Clare Facio Visual"
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "name": "Nom",
+    "email": "Adresse e-mail",
+    "message": "Message",
+    "send": "Envoyer"
+  },
+  "newsletter": {
+    "title": "Abonnez-vous à notre bulletin",
+    "placeholder": "Votre adresse e-mail",
+    "subscribe": "S'abonner"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "about": "Nosotros",
+    "services": "Servicios",
+    "blog": "Blog",
+    "visual": "Clare Facio Visual",
+    "contact": "Contáctenos"
+  },
+  "hero": {
+    "title": "Soluciones Legales en Costa Rica",
+    "subtitle": "Expertos en derecho corporativo, migratorio e inmobiliario para inversores y empresas internacionales.",
+    "cta_primary": "Contáctenos",
+    "cta_secondary": "Conocer más"
+  },
+  "whycr": {
+    "title": "¿Por qué Costa Rica?"
+  },
+  "about": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Abogados especializados con experiencia internacional",
+    "meet_team": "Conocer al equipo",
+    "learn_more": "Ver perfil"
+  },
+  "services": {
+    "title": "Nuestros Servicios"
+  },
+  "blog": {
+    "title": "Nuestro Blog",
+    "read_more": "Leer más"
+  },
+  "visual": {
+    "title": "Clare Facio Visual"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar"
+  },
+  "newsletter": {
+    "title": "Suscríbase a nuestro boletín",
+    "placeholder": "Su correo electrónico",
+    "subscribe": "Suscribirse"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}
