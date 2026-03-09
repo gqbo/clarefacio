@@ -4,187 +4,170 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 
-const reasons = [1, 2, 3, 4, 5, 6] as const;
-
 export default function WhyCR() {
   const t = useTranslations("whycr");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  const paragraphs = [
+    t("body_p1"),
+    t("body_p2"),
+    t("body_p3"),
+    t("body_p4"),
+  ] as const;
 
   return (
     <section
       id="nosotros"
-      className="relative py-32 overflow-hidden"
-      style={{ backgroundColor: "#0c0907" }}
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/*
-        Background: fine legal ledger paper crosshatch
-        Pure CSS — no image dependency, feels like a law office document
-      */}
+      {/* Background image — parrot; on mobile shift right to show the bird */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(237,232,223,0.022) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(237,232,223,0.022) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
+          backgroundImage: "url('/images/whycr-bg.jpg')",
+          backgroundPosition: "70% center",
         }}
       />
 
-      {/* Vignette to blend the grid into the edges */}
+      {/* Multi-layer dark overlay — same warmth as hero */}
+      <div className="absolute inset-0 bg-linear-to-r from-[#0c0907] via-[#0c0907]/90 to-[#0c0907]/40" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#0c0907] via-transparent to-transparent" />
+
+      {/* Top entry gradient — blends flush with the hero's bottom fade */}
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, transparent 40%, #0c0907 100%)",
-        }}
+        className="absolute top-0 left-0 right-0 h-90 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, #0c0907 0%, transparent 100%)" }}
       />
 
       {/* Left ornamental vertical rule */}
       <div
-        className="absolute left-0 top-32 bottom-32 w-px"
+        className="absolute left-0 top-1/4 bottom-1/4 w-px"
         style={{
           background:
-            "linear-gradient(to bottom, transparent, rgba(196,30,40,0.45), transparent)",
+            "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
         }}
       />
 
+      {/* Content */}
       <div
-        className="relative z-10 max-w-7xl mx-auto px-8 lg:px-14"
         ref={ref}
+        className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 py-32"
       >
-        {/* ── Section header ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-20"
-        >
-          {/* Label */}
-          <p className="flex items-center gap-4 mb-7">
+        <div className="max-w-2xl">
+          {/* Eyebrow label */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="flex items-center gap-4 mb-7"
+          >
             <span
               className="block w-8 h-px"
               style={{ backgroundColor: "#c41e28" }}
             />
             <span
-              className="italic text-[#c41e28] tracking-[0.35em] uppercase text-xs"
+              className="italic text-[#c41e28] tracking-[0.35em] uppercase"
               style={{ fontFamily: "var(--font-garamond)", fontSize: "0.8rem" }}
             >
               Costa Rica
             </span>
-          </p>
+          </motion.p>
 
           {/* Headline */}
-          <h2
-            className="font-light leading-[1.05]"
+          <motion.h2
+            initial={{ opacity: 0, y: 32 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="font-light leading-[1.05] mb-10"
             style={{
               fontFamily: "var(--font-garamond)",
-              fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
+              fontSize: "clamp(2.8rem, 6vw, 5rem)",
               color: "#ede8df",
               letterSpacing: "-0.01em",
             }}
           >
             {t("title")}
-          </h2>
+          </motion.h2>
 
-          {/* Subtitle */}
-          <p
-            className="mt-5 max-w-xl leading-relaxed"
-            style={{
-              fontFamily: "var(--font-dm-sans)",
-              color: "rgba(237,232,223,0.45)",
-              fontSize: "1rem",
-            }}
-          >
-            {t("subtitle")}
-          </p>
-        </motion.div>
+          {/* Ornamental rule */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+            className="origin-left mb-10"
+            style={{ height: "1px", background: "rgba(237,232,223,0.1)", maxWidth: "20rem" }}
+          />
 
-        {/* ── Reasons — editorial numbered list ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
-          {reasons.map((num, i) => (
-            <motion.article
-              key={num}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.06 * i }}
-              className="group relative py-10 px-8 cursor-default"
-              style={{
-                borderTop: "1px solid rgba(237,232,223,0.07)",
-                borderRight: i % 3 !== 2 ? "1px solid rgba(237,232,223,0.07)" : "none",
-              }}
-            >
-              {/* Hover fill — very subtle warm tint */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ backgroundColor: "rgba(196,30,40,0.03)" }}
-              />
-
-              {/* Number — large Cormorant, high-contrast serif strokes */}
-              <p
-                className="relative font-light leading-none mb-6 select-none"
-                style={{
-                  fontFamily: "var(--font-garamond)",
-                  fontSize: "3.5rem",
-                  color: "rgba(196,30,40,0.22)",
-                  letterSpacing: "-0.03em",
-                  transition: "color 0.3s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "rgba(196,30,40,0.45)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "rgba(196,30,40,0.22)")
-                }
-              >
-                {String(num).padStart(2, "0")}
-              </p>
-
-              {/* Thin crimson rule under number */}
-              <div
-                className="relative mb-5 w-6 group-hover:w-10 transition-all duration-400"
-                style={{ height: "1px", backgroundColor: "#c41e28" }}
-              />
-
-              {/* Title — Cormorant, medium weight */}
-              <h3
-                className="relative mb-3 leading-tight"
-                style={{
-                  fontFamily: "var(--font-garamond)",
-                  fontSize: "1.35rem",
-                  fontWeight: 500,
-                  color: "#ede8df",
-                  letterSpacing: "0.01em",
-                }}
-              >
-                {t(`reason${num}_title`)}
-              </h3>
-
-              {/* Description — Lora, body serif */}
-              <p
-                className="relative leading-relaxed"
+          {/* Prose paragraphs */}
+          <div className="space-y-5">
+            {paragraphs.map((para, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.45 + i * 0.1 }}
                 style={{
                   fontFamily: "var(--font-dm-sans)",
-                  fontSize: "0.875rem",
-                  color: "rgba(237,232,223,0.42)",
-                  lineHeight: "1.7",
+                  fontSize: "1rem",
+                  color: i === 0
+                    ? "rgba(237,232,223,0.75)"
+                    : "rgba(237,232,223,0.5)",
+                  lineHeight: "1.8",
                 }}
               >
-                {t(`reason${num}_desc`)}
-              </p>
-            </motion.article>
-          ))}
-        </div>
+                {para}
+              </motion.p>
+            ))}
+          </div>
 
-        {/* Bottom rule */}
-        <div
-          className="mt-0"
-          style={{
-            borderTop: "1px solid rgba(237,232,223,0.07)",
-          }}
-        />
+          {/* Stats strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.9 }}
+            className="mt-14 flex flex-wrap gap-x-8 gap-y-5"
+            style={{ borderTop: "1px solid rgba(237,232,223,0.07)", paddingTop: "1.75rem" }}
+          >
+            {[
+              { num: "6%", label: t("stat_biodiversity") },
+              { num: "75+", label: t("stat_democracy") },
+              { num: "99%", label: t("stat_literacy") },
+            ].map(({ num, label }) => (
+              <div key={label} className="flex items-baseline gap-3">
+                <span
+                  className="font-light leading-none"
+                  style={{
+                    fontFamily: "var(--font-garamond)",
+                    fontSize: "2rem",
+                    color: "rgba(196,30,40,0.7)",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {num}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-dm-sans)",
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "rgba(237,232,223,0.35)",
+                  }}
+                >
+                  {label}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
+
+      {/* Seamless transition into next section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32"
+        style={{ background: "linear-gradient(to top, #0c0907 0%, transparent 100%)" }}
+      />
     </section>
   );
 }
