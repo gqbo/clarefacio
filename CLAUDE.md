@@ -170,6 +170,98 @@ Scope is optional but recommended — use the section or file name (`hero`, `nav
 
 ---
 
+## Design System & Brand Identity
+
+### Visual Philosophy
+
+The site must feel like a **prestige law firm**, not a tech startup. The distinction is intentional in every choice:
+
+- **Typography-led** — let type carry the weight, not icons, cards, or decorations
+- **Warm, not cold** — dark backgrounds have warmth (espresso black), text has warmth (parchment)
+- **Editorial, not SaaS** — layouts inspired by legal briefs and financial institutions, not dashboards
+- **Restrained color** — red is used as a precision instrument, not scattered everywhere
+
+---
+
+### Color Palette
+
+| Token | Value | Use |
+|---|---|---|
+| `--color-bg` | `#0C0907` | Page background — warm espresso black |
+| `--color-accent` | `#C41E28` | Primary accent — Clare Facio crimson |
+| `--color-accent-hover` | `#9C1820` | Hover state for red elements |
+| `--color-text` | `#EDE8DF` | Body text — warm parchment, not clinical white |
+| `--color-muted` | `#7A7268` | Secondary text, descriptions |
+| `--color-surface` | `#131008` | Card/surface backgrounds |
+| `--color-border` | `rgba(237,232,223,0.07)` | Hairline dividers |
+| `--color-brass` | `rgba(196,158,89,0.18)` | Subtle ornamental accents (use sparingly) |
+
+**Do NOT** use pure `#000000` black or pure `#FFFFFF` white — they read as tech/sterile.
+
+---
+
+### Typography
+
+| Font | Variable | Use |
+|---|---|---|
+| **Cormorant Garamond** | `var(--font-garamond)` | All headings, display text, numbers |
+| **Lora** | `var(--font-dm-sans)` | Body text, subtitles, nav links, UI labels |
+
+**Why these fonts:**
+- **Cormorant Garamond** has extreme thick/thin stroke contrast — the typographic signature of 19th century legal documents and prestige institutions. Its italic is especially powerful (used for the "Costa Rica" highlight in the hero).
+- **Lora** is a warm bookish serif designed for screen reading. It reads like a legal brief, not a startup pitch.
+
+**Key patterns:**
+- Headings: Cormorant, `font-light` or `font-medium`, tight letter-spacing (`-0.01em`)
+- Section labels/eyebrows: Cormorant italic, all-caps, very wide tracking (`0.35em`), crimson color
+- Body/UI text: Lora, regular weight, `0.12–0.2em` tracking when used in all-caps
+- Large numbers (01, 02...): Cormorant, very large, low opacity crimson — like a legal brief section marker
+
+**Do NOT use** DM Sans, Inter, Roboto, or any geometric sans-serif — these signal "tech startup".
+
+---
+
+### Red Highlight Technique
+
+The signature visual from Clare Facio's social media — a keyword on a crimson background block:
+
+```tsx
+<span
+  className="inline italic font-semibold text-white px-4 py-1"
+  style={{ backgroundColor: "#c41e28", fontFamily: "var(--font-garamond)" }}
+>
+  Costa Rica
+</span>
+```
+
+Use this sparingly — one instance per page at most.
+
+---
+
+### Background Textures
+
+**Hero:** `hero-bg.webp` with multi-layer dark gradient overlay. Keep the image subtle — the photo provides atmosphere, not visual focus.
+
+**WhyCR and interior sections:** CSS crosshatch (legal ledger paper texture) — no stock photos:
+```css
+background-image:
+  linear-gradient(rgba(237,232,223,0.022) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(237,232,223,0.022) 1px, transparent 1px);
+background-size: 48px 48px;
+```
+Combine with a radial vignette to blend the edges.
+
+---
+
+### Layout Patterns
+
+- **Section headers:** left-aligned eyebrow label (Cormorant italic, crimson, `tracking-[0.35em]`) → `w-8 h-px` red rule → large Cormorant heading
+- **Cards:** editorial numbered (`01`, `02`...) with hairline borders, NOT icon boxes with shadows
+- **Dividers:** `1px solid rgba(237,232,223,0.07)` — barely visible hairlines, not heavy lines
+- **Ornamental rules:** `w-px` vertical lines with gradient fade (transparent → crimson → transparent) on left edge of sections
+
+---
+
 ## Maintenance Notes
 
 - **Content changes** (lawyer bios, services text): edit the relevant component or translation file, push to GitHub
