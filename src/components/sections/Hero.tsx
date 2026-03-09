@@ -90,8 +90,11 @@ export default function Hero() {
           </span>
           <span className="block leading-none">
             <span
-              className="inline italic font-semibold text-white px-4 pt-1 pb-3 leading-none"
-              style={{ backgroundColor: "#c41e28", fontFamily: "var(--font-garamond)" }}
+              className="inline italic font-semibold leading-none"
+              style={{
+                color: "#c41e28",
+                fontFamily: "var(--font-garamond)",
+              }}
             >
               {t("title_highlight")}
             </span>
