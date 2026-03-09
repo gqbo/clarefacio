@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Warm espresso black — not cold tech black */
+  --color-bg: #0c0907;
+  --color-accent: #c41e28;
+  --color-accent-hover: #9c1820;
+  /* Warm parchment — not clinical white */
+  --color-text: #ede8df;
+  --color-muted: #7a7268;
+  --color-surface: #131008;
+  --color-border: rgba(237, 232, 223, 0.07);
+  /* Warm brass line — subtle secondary accent for ornamental elements */
+  --color-brass: rgba(196, 158, 89, 0.18);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-garamond);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-dm-sans), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(196, 30, 40, 0.3);
+  color: var(--color-text);
 }

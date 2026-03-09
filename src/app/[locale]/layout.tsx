@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Cormorant_Garamond, Lora } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const geist = Geist({
-  variable: "--font-geist",
+// Primary display font: Cormorant Garamond
+// High-contrast calligraphic strokes — the typographic signature of prestige law
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-garamond",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+// Body font: Lora
+// Warm, bookish, authoritative serif — reads like a legal brief, not a startup pitch
+const lora = Lora({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +45,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${geist.variable} antialiased`}>
+      <body
+        className={`${cormorantGaramond.variable} ${lora.variable} antialiased`}
+      >
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
