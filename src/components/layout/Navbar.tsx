@@ -5,20 +5,10 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { routing } from "@/i18n/routing";
 
-const localeLabels: Record<string, string> = {
-  es: "ES",
-  en: "EN",
-  fr: "FR",
-};
-
-const localeFull: Record<string, string> = {
-  es: "Español",
-  en: "English",
-  fr: "Français",
-};
+const localeLabels: Record<string, string> = { es: "ES", en: "EN", fr: "FR" };
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -28,7 +18,6 @@ export default function Navbar() {
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -36,25 +25,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close lang dropdown on outside click
-  useEffect(() => {
-    if (!langOpen) return;
-    const handler = () => setLangOpen(false);
-    window.addEventListener("click", handler);
-    return () => window.removeEventListener("click", handler);
-  }, [langOpen]);
-
   const switchLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
-    setLangOpen(false);
     setMobileOpen(false);
   };
 
   const navLinks = [
+    { key: "home", href: "#" },
     { key: "about", href: "#nosotros" },
     { key: "services", href: "#servicios" },
     { key: "blog", href: "#blog" },
-    { key: "visual", href: "#visual" },
   ];
 
   return (
@@ -74,13 +54,13 @@ export default function Navbar() {
               alt="Clare Facio Legal"
               width={120}
               height={56}
-              className="h-11 w-auto object-contain brightness-0 invert"
+              className="h-11 w-auto object-contain"
               priority
             />
           </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Desktop Nav Links — absolutely centered on the page */}
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.key}
@@ -93,56 +73,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right: Language dropdown + CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            {/* Language dropdown */}
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs tracking-[0.15em] uppercase font-medium text-[#f5f0eb]/60 hover:text-[#f5f0eb] border border-white/10 hover:border-white/25 rounded transition-all duration-200"
-                style={{ fontFamily: "var(--font-dm-sans)" }}
-              >
-                {localeLabels[locale]}
-                <ChevronDown
-                  size={12}
-                  className={`transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-
-              <AnimatePresence>
-                {langOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-2 w-36 bg-[#161616] border border-white/10 rounded shadow-2xl overflow-hidden"
-                  >
-                    {routing.locales.map((loc) => (
-                      <button
-                        key={loc}
-                        onClick={() => switchLocale(loc)}
-                        className={`w-full text-left px-4 py-3 text-xs flex items-center justify-between transition-colors ${
-                          loc === locale
-                            ? "text-[#c41e28] bg-[#c41e28]/8"
-                            : "text-[#f5f0eb]/60 hover:text-[#f5f0eb] hover:bg-white/4"
-                        }`}
-                        style={{ fontFamily: "var(--font-dm-sans)" }}
-                      >
-                        <span className="tracking-[0.15em] uppercase font-medium">
-                          {localeLabels[loc]}
-                        </span>
-                        <span className="text-xs opacity-50">
-                          {localeFull[loc]}
-                        </span>
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Contact CTA */}
+          {/* Right: CTA only */}
+          <div className="hidden lg:flex items-center">
             <a
               href="#contacto"
               className="px-5 py-2 text-xs tracking-[0.15em] uppercase font-medium bg-[#c41e28] text-white hover:bg-[#a01820] transition-colors duration-200 rounded"

@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* Thin ornamental vertical rule — left margin */}
       <div
-        className="absolute left-10 top-1/3 bottom-1/3 w-px"
+        className="absolute left-0 sm:left-10 top-1/3 bottom-1/3 w-px"
         style={{
           background:
             "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
@@ -55,22 +55,23 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="leading-[0.98] mb-10 font-light"
+          className="mb-10 font-light flex flex-col"
           style={{
             fontFamily: "var(--font-garamond)",
             fontSize: "clamp(3.8rem, 9vw, 8rem)",
             letterSpacing: "-0.01em",
+            gap: "0.3em",
           }}
         >
           {/* "Soluciones Legales en" — light weight, warm parchment */}
-          <span className="block text-[#ede8df]/90 font-light">
+          <span className="block text-[#ede8df]/90 font-light leading-none">
             {t("title_before")}
           </span>
 
           {/* "Costa Rica" — italic, Cormorant's high-contrast strokes shine here */}
-          <span className="block">
+          <span className="block leading-none">
             <span
-              className="inline italic font-semibold text-white px-4 py-1 leading-none"
+              className="inline italic font-semibold text-white px-4 pt-1 pb-3 leading-none"
               style={{
                 backgroundColor: "#c41e28",
                 fontFamily: "var(--font-garamond)",

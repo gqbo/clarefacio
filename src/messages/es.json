@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Inicio",
     "about": "Nosotros",
     "services": "Servicios",
     "blog": "Blog",
@@ -10,7 +11,7 @@
     "pretitle": "Clare Facio Legal",
     "title_before": "Soluciones Legales en",
     "title_highlight": "Costa Rica",
-    "subtitle": "Expertos en derecho corporativo, migratorio e inmobiliario para inversores y empresas internacionales.",
+    "subtitle": "Somos una firma de abogados jóvenes y proactivos, líderes en Costa Rica en temas de expatriación, atracción de negocios, adquisición, venta de terrenos y radicación.",
     "cta_primary": "Contáctenos",
     "cta_secondary": "Conocer más"
   },
