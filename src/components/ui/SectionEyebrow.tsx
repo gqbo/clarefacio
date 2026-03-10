@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type TargetAndTransition } from "framer-motion";
 
 interface Props {
   label: string;
   /** Pass `{ opacity: 1, y: 0 }` for hero (always animates) or `isInView ? { opacity: 1, y: 0 } : {}` for scroll-triggered sections */
-  animate: object;
+  animate: TargetAndTransition;
   className?: string;
 }
 
