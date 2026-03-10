@@ -17,7 +17,7 @@ export default function WhyCR() {
 
   return (
     <section
-      id="nosotros"
+      id="costarica"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background image */}
