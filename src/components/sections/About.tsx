@@ -4,31 +4,25 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import { EASE_EDITORIAL } from "@/lib/motion";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
+// `as const` lets TypeScript infer literal key types automatically.
+// Adding a lawyer only requires updating this array + translation files.
 const LAWYERS = [
-  {
-    image: "/images/lawyers/gabriel-clare-facio.png",
-    nameKey: "lawyer1_name",
-    titleKey: "lawyer1_title",
-  },
-  {
-    image: "/images/lawyers/enrique_loria_brunker.jpg",
-    nameKey: "lawyer2_name",
-    titleKey: "lawyer2_title",
-  },
-  {
-    image: "/images/lawyers/manuel_gimenez_costillo.jpg",
-    nameKey: "lawyer3_name",
-    titleKey: "lawyer3_title",
-  },
-  {
-    image: "/images/lawyers/nicole_gonzalez_guardia.jpg",
-    nameKey: "lawyer4_name",
-    titleKey: "lawyer4_title",
-  },
-];
+  { image: "/images/lawyers/gabriel-clare-facio.png",     nameKey: "lawyer1_name", titleKey: "lawyer1_title" },
+  { image: "/images/lawyers/enrique_loria_brunker.jpg",   nameKey: "lawyer2_name", titleKey: "lawyer2_title" },
+  { image: "/images/lawyers/manuel_gimenez_costillo.jpg", nameKey: "lawyer3_name", titleKey: "lawyer3_title" },
+  { image: "/images/lawyers/nicole_gonzalez_guardia.jpg", nameKey: "lawyer4_name", titleKey: "lawyer4_title" },
+] as const;
+
+const PILLARS = [
+  { num: "01", key: "pillar1" },
+  { num: "02", key: "pillar2" },
+  { num: "03", key: "pillar3" },
+] as const;
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
@@ -37,11 +31,7 @@ export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const pillars = [
-    { num: "01", text: t("pillar1") },
-    { num: "02", text: t("pillar2") },
-    { num: "03", text: t("pillar3") },
-  ];
+  const eyebrowAnimate = isInView ? { opacity: 1, y: 0 } : {};
 
   return (
     <section
@@ -71,31 +61,12 @@ export default function About() {
 
         {/* ── Section header ─────────────────────────────────────────────── */}
         <div className="mb-16">
-          {/* Eyebrow */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7 }}
-            className="flex items-center gap-4 mb-5"
-          >
-            <span className="block w-8 h-px" style={{ backgroundColor: "#c41e28" }} />
-            <span
-              className="italic tracking-[0.35em] uppercase"
-              style={{
-                fontFamily: "var(--font-garamond)",
-                fontSize: "0.8rem",
-                color: "#c41e28",
-              }}
-            >
-              {t("eyebrow")}
-            </span>
-          </motion.p>
+          <SectionEyebrow label={t("eyebrow")} animate={eyebrowAnimate} className="mb-5" />
 
-          {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 32 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.15, ease: EASE_EDITORIAL }}
             className="font-light leading-[1.1] mb-5"
             style={{
               fontFamily: "var(--font-garamond)",
@@ -105,23 +76,20 @@ export default function About() {
             }}
           >
             {t("title")}
-          </motion.h2>       
+          </motion.h2>
         </div>
 
         {/* ── Firm pillars — three editorial statements ───────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-20">
-          {pillars.map((pillar, i) => (
+          {PILLARS.map(({ num, key }, i) => (
             <motion.div
-              key={pillar.num}
+              key={num}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.45 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.7, delay: 0.45 + i * 0.1, ease: EASE_EDITORIAL }}
               className={`relative group pt-6 pb-6 ${i > 0 ? "md:pl-8" : ""} ${i < 2 ? "md:pr-8 md:[border-right:1px_solid_rgba(237,232,223,0.08)]" : ""}`}
-              style={{
-                borderTop: "1px solid rgba(237,232,223,0.08)",
-              }}
+              style={{ borderTop: "1px solid rgba(237,232,223,0.08)" }}
             >
-              {/* Section number */}
               <span
                 className="block leading-none mb-3"
                 style={{
@@ -132,7 +100,7 @@ export default function About() {
                   fontStyle: "italic",
                 }}
               >
-                {pillar.num}
+                {num}
               </span>
 
               <p
@@ -143,7 +111,7 @@ export default function About() {
                   lineHeight: "1.75",
                 }}
               >
-                {pillar.text}
+                {t(key)}
               </p>
             </motion.div>
           ))}
@@ -156,7 +124,8 @@ export default function About() {
         </div>
 
         {/* ── Lawyers grid ─────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px"
+        <div
+          className="grid grid-cols-2 lg:grid-cols-4 gap-px"
           style={{ border: "1px solid rgba(237,232,223,0.08)" }}
         >
           {LAWYERS.map((lawyer, i) => (
@@ -164,7 +133,7 @@ export default function About() {
               key={lawyer.nameKey}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, delay: 0.6 + i * 0.12, ease: EASE_EDITORIAL }}
               className="relative group overflow-hidden"
               style={{
                 backgroundColor: "#0c0907",
@@ -175,19 +144,18 @@ export default function About() {
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
                   src={lawyer.image}
-                  alt={t(lawyer.nameKey as any)}
+                  alt={t(lawyer.nameKey)}
                   fill
                   className="object-cover object-top transition-all duration-700 group-hover:scale-105"
                   style={{ filter: "grayscale(25%)" }}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
 
-                {/* Dark overlay — always present, deepens on hover */}
+                {/* Dark overlay */}
                 <div
                   className="absolute inset-0 transition-opacity duration-500"
                   style={{
-                    background:
-                      "linear-gradient(to top, #0c0907 0%, rgba(12,9,7,0.5) 40%, transparent 70%)",
+                    background: "linear-gradient(to top, #0c0907 0%, rgba(12,9,7,0.5) 40%, transparent 70%)",
                   }}
                 />
 
@@ -201,8 +169,7 @@ export default function About() {
                 <div
                   className="absolute left-0 top-0 bottom-0 w-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background:
-                      "linear-gradient(to bottom, transparent, rgba(196,30,40,0.7), transparent)",
+                    background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.7), transparent)",
                   }}
                 />
               </div>
@@ -221,7 +188,7 @@ export default function About() {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  {t(lawyer.nameKey as any)}
+                  {t(lawyer.nameKey)}
                 </h3>
                 <p
                   style={{
@@ -233,7 +200,7 @@ export default function About() {
                     lineHeight: "1.5",
                   }}
                 >
-                  {t(lawyer.titleKey as any)}
+                  {t(lawyer.titleKey)}
                 </p>
               </div>
             </motion.div>

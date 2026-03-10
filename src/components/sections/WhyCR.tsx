@@ -3,6 +3,18 @@
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import { EASE_EDITORIAL } from "@/lib/motion";
+
+// ─── Data ───────────────────────────────────────────────────────────────────
+
+const STATS = [
+  { num: "6%",  statKey: "stat_biodiversity" },
+  { num: "75+", statKey: "stat_democracy" },
+  { num: "99%", statKey: "stat_literacy" },
+] as const;
+
+// ─── Component ───────────────────────────────────────────────────────────────
 
 export default function WhyCR() {
   const t = useTranslations("whycr");
@@ -14,6 +26,8 @@ export default function WhyCR() {
     { num: t("card2_num"), title: t("card2_title"), text: t("card2_text") },
     { num: t("card3_num"), title: t("card3_title"), text: t("card3_text") },
   ];
+
+  const eyebrowAnimate = isInView ? { opacity: 1, y: 0 } : {};
 
   return (
     <section
@@ -43,8 +57,7 @@ export default function WhyCR() {
       <div
         className="absolute left-0 top-1/4 bottom-1/4 w-px"
         style={{
-          background:
-            "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
+          background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
         }}
       />
 
@@ -57,29 +70,16 @@ export default function WhyCR() {
 
           {/* Left column — heading + intro + stats */}
           <div className="flex flex-col">
-            {/* Top group: eyebrow + heading + rule + intro */}
             <div className="flex flex-col gap-4">
+
               {/* Eyebrow */}
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.7 }}
-                className="flex items-center gap-4"
-              >
-                <span className="block w-8 h-px" style={{ backgroundColor: "#c41e28" }} />
-                <span
-                  className="italic text-[#c41e28] tracking-[0.35em] uppercase"
-                  style={{ fontFamily: "var(--font-garamond)", fontSize: "0.8rem" }}
-                >
-                  Costa Rica
-                </span>
-              </motion.p>
+              <SectionEyebrow label="Costa Rica" animate={eyebrowAnimate} />
 
               {/* Headline */}
               <motion.h2
                 initial={{ opacity: 0, y: 32 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.9, delay: 0.15, ease: EASE_EDITORIAL }}
                 className="font-light leading-[1.1] whitespace-nowrap"
                 style={{
                   fontFamily: "var(--font-garamond)",
@@ -91,7 +91,7 @@ export default function WhyCR() {
                 {t("title")}
               </motion.h2>
 
-              {/* Ornamental rule — right below title */}
+              {/* Ornamental rule */}
               <motion.div
                 initial={{ scaleX: 0, opacity: 0 }}
                 animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
@@ -123,13 +123,9 @@ export default function WhyCR() {
               transition={{ duration: 0.7, delay: 0.6 }}
               className="flex flex-col gap-8 mt-8"
             >
-              {[
-                { num: "6%", label: t("stat_biodiversity") },
-                { num: "75+", label: t("stat_democracy") },
-                { num: "99%", label: t("stat_literacy") },
-              ].map(({ num, label }, i) => (
+              {STATS.map(({ num, statKey }, i) => (
                 <motion.div
-                  key={label}
+                  key={statKey}
                   initial={{ opacity: 0, x: -12 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.65 + i * 0.08 }}
@@ -156,7 +152,7 @@ export default function WhyCR() {
                       color: "rgba(237,232,223,0.35)",
                     }}
                   >
-                    {label}
+                    {t(statKey)}
                   </span>
                 </motion.div>
               ))}
@@ -170,7 +166,7 @@ export default function WhyCR() {
                 key={card.num}
                 initial={{ opacity: 0, x: 24 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.4 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.7, delay: 0.4 + i * 0.15, ease: EASE_EDITORIAL }}
                 className="relative group flex-1"
                 style={{
                   borderTop: "1px solid rgba(237,232,223,0.08)",
@@ -188,7 +184,7 @@ export default function WhyCR() {
                   }}
                 />
 
-                {/* Number — visually prominent */}
+                {/* Number */}
                 <span
                   className="block leading-none mb-3"
                   style={{

@@ -3,6 +3,8 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import { fadeUp } from "@/lib/motion";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -18,14 +20,6 @@ const PRACTICE_AREAS = [
   "Derecho de Familia",
   "Contabilidad",
 ];
-
-// ─── Animation variants ──────────────────────────────────────────────────────
-
-const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 18 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, delay },
-});
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
@@ -57,20 +51,11 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pb-24 pt-48">
 
         {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
+        <SectionEyebrow
+          label={t("pretitle")}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="flex items-center gap-4 mb-8"
-        >
-          <span className="block w-8 h-px" style={{ backgroundColor: "#c41e28" }} />
-          <span
-            className="text-xs tracking-[0.4em] uppercase italic text-[#c41e28]"
-            style={{ fontFamily: "var(--font-garamond)", fontSize: "0.8rem" }}
-          >
-            {t("pretitle")}
-          </span>
-        </motion.p>
+          className="mb-8"
+        />
 
         {/* Headline */}
         <motion.h1
@@ -91,10 +76,7 @@ export default function Hero() {
           <span className="block leading-none">
             <span
               className="inline italic font-semibold leading-none"
-              style={{
-                color: "#c41e28",
-                fontFamily: "var(--font-garamond)",
-              }}
+              style={{ color: "#c41e28", fontFamily: "var(--font-garamond)" }}
             >
               {t("title_highlight")}
             </span>
@@ -130,16 +112,13 @@ export default function Hero() {
         >
           <a
             href="#contacto"
-            className="group inline-flex items-center justify-center gap-3 px-9 py-4 text-white transition-all duration-300"
+            className="group inline-flex items-center justify-center gap-3 px-9 py-4 text-white bg-[#c41e28] hover:bg-[#9c1820] transition-colors duration-300"
             style={{
               fontFamily: "var(--font-dm-sans)",
               fontSize: "0.7rem",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              backgroundColor: "#c41e28",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#9c1820")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#c41e28")}
           >
             {t("cta_primary")}
             <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
@@ -147,22 +126,12 @@ export default function Hero() {
 
           <a
             href="#nosotros"
-            className="inline-flex items-center justify-center gap-3 px-9 py-4 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-3 px-9 py-4 text-[rgba(237,232,223,0.6)] hover:text-[rgba(237,232,223,1)] border border-[rgba(237,232,223,0.2)] hover:border-[rgba(237,232,223,0.45)] transition-all duration-300"
             style={{
               fontFamily: "var(--font-dm-sans)",
               fontSize: "0.7rem",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              color: "rgba(237,232,223,0.6)",
-              border: "1px solid rgba(237,232,223,0.2)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "rgba(237,232,223,1)";
-              e.currentTarget.style.borderColor = "rgba(237,232,223,0.45)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "rgba(237,232,223,0.6)";
-              e.currentTarget.style.borderColor = "rgba(237,232,223,0.2)";
             }}
           >
             {t("cta_secondary")}
