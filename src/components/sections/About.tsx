@@ -124,16 +124,7 @@ export default function About() {
             }}
           >
             {t("title")}
-          </motion.h2>
-
-          {/* Ornamental rule */}
-          <motion.div
-            initial={{ scaleX: 0, opacity: 0 }}
-            animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
-            className="origin-left"
-            style={{ height: "1px", background: "rgba(237,232,223,0.12)", maxWidth: "28rem" }}
-          />
+          </motion.h2>       
         </div>
 
         {/* ── Firm pillars — three editorial statements ───────────────────── */}
@@ -159,8 +150,8 @@ export default function About() {
                 className="block leading-none mb-3"
                 style={{
                   fontFamily: "var(--font-garamond)",
-                  fontSize: "1.1rem",
-                  letterSpacing: "0.08em",
+                  fontSize: "1.6rem",
+                  letterSpacing: "0.05em",
                   color: "rgba(196,30,40,0.5)",
                   fontStyle: "italic",
                 }}
