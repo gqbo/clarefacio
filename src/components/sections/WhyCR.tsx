@@ -18,7 +18,7 @@ export default function WhyCR() {
   return (
     <section
       id="costarica"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative flex items-center overflow-hidden"
     >
       {/* Background image */}
       <div
@@ -51,7 +51,7 @@ export default function WhyCR() {
       {/* Content */}
       <div
         ref={ref}
-        className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pt-12 pb-24 lg:py-32"
+        className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 py-16 lg:py-24"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
@@ -64,7 +64,9 @@ export default function WhyCR() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7 }}
+                className="flex items-center gap-4"
               >
+                <span className="block w-8 h-px" style={{ backgroundColor: "#c41e28" }} />
                 <span
                   className="italic text-[#c41e28] tracking-[0.35em] uppercase"
                   style={{ fontFamily: "var(--font-garamond)", fontSize: "0.8rem" }}
