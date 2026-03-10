@@ -47,7 +47,21 @@
     "lawyer4_title": "Attorney"
   },
   "services": {
-    "title": "Our Services"
+    "eyebrow": "PRACTICE AREAS",
+    "title": "Our Services",
+    "learnMore": "Learn more",
+    "viewAll": "View all services",
+    "contratos_title": "Contract Drafting",
+    "familia_title": "Family Law",
+    "penal_title": "Criminal Law",
+    "alertas_title": "Registry Alerts",
+    "nombre_title": "Trade Name Registration",
+    "inmobiliario_title": "Real Estate Law",
+    "seguros_title": "Insurance Management",
+    "migratorio_title": "Immigration Law",
+    "tributario_title": "Tax Law",
+    "publico_title": "Public & Administrative Law",
+    "intelectual_title": "Intellectual Property"
   },
   "blog": {
     "title": "Our Blog",

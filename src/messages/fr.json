@@ -47,7 +47,21 @@
     "lawyer4_title": "Avocate"
   },
   "services": {
-    "title": "Nos Services"
+    "eyebrow": "DOMAINES D'EXPERTISE",
+    "title": "Nos Services",
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tous les services",
+    "contratos_title": "Rédaction de Contrats",
+    "familia_title": "Droit de la Famille",
+    "penal_title": "Droit Pénal",
+    "alertas_title": "Alertes Registres",
+    "nombre_title": "Enregistrement de Nom Commercial",
+    "inmobiliario_title": "Droit Immobilier",
+    "seguros_title": "Gestion des Assurances",
+    "migratorio_title": "Droit de l'Immigration",
+    "tributario_title": "Droit Fiscal",
+    "publico_title": "Droit Public et Administratif",
+    "intelectual_title": "Propriété Intellectuelle"
   },
   "blog": {
     "title": "Notre Blog",

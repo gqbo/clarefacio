@@ -47,7 +47,21 @@
     "lawyer4_title": "Abogada"
   },
   "services": {
-    "title": "Nuestros Servicios"
+    "eyebrow": "ÁREAS DE PRÁCTICA",
+    "title": "Nuestros Servicios",
+    "learnMore": "Leer más",
+    "viewAll": "Ver todos los servicios",
+    "contratos_title": "Elaboración de Contratos",
+    "familia_title": "Derecho de Familia",
+    "penal_title": "Derecho Penal",
+    "alertas_title": "Alertas Registrales",
+    "nombre_title": "Registro de Nombre Comercial",
+    "inmobiliario_title": "Derecho Inmobiliario",
+    "seguros_title": "Gestión de Seguros",
+    "migratorio_title": "Derecho Migratorio",
+    "tributario_title": "Derecho Tributario",
+    "publico_title": "Derecho Público y Administrativo",
+    "intelectual_title": "Propiedad Intelectual"
   },
   "blog": {
     "title": "Nuestro Blog",
