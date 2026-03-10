@@ -126,11 +126,11 @@ export default function Hero() {
         {/* CTAs */}
         <motion.div
           {...fadeUp(0.82)}
-          className="flex flex-wrap items-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16"
         >
           <a
             href="#contacto"
-            className="group inline-flex items-center gap-3 px-9 py-4 text-white transition-all duration-300"
+            className="group inline-flex items-center justify-center gap-3 px-9 py-4 text-white transition-all duration-300"
             style={{
               fontFamily: "var(--font-dm-sans)",
               fontSize: "0.7rem",
@@ -147,7 +147,7 @@ export default function Hero() {
 
           <a
             href="#nosotros"
-            className="inline-flex items-center gap-3 px-9 py-4 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-3 px-9 py-4 transition-all duration-300"
             style={{
               fontFamily: "var(--font-dm-sans)",
               fontSize: "0.7rem",
