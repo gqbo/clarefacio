@@ -49,25 +49,6 @@ export default function About() {
       className="relative overflow-hidden"
       style={{ backgroundColor: "#0c0907" }}
     >
-      {/* Crosshatch background — legal ledger paper texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(237,232,223,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(237,232,223,0.022) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      {/* Radial vignette to blend edges */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, #0c0907 100%)",
-        }}
-      />
-
       {/* Top entry gradient */}
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
@@ -85,7 +66,7 @@ export default function About() {
       {/* Content */}
       <div
         ref={ref}
-        className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pt-24 pb-32"
+        className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pt-16 pb-20"
       >
 
         {/* ── Section header ─────────────────────────────────────────────── */}
