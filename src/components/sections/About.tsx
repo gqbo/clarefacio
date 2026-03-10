@@ -116,14 +116,9 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.45 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative group"
+              className={`relative group pt-6 pb-6 ${i > 0 ? "md:pl-8" : ""} ${i < 2 ? "md:pr-8 md:[border-right:1px_solid_rgba(237,232,223,0.08)]" : ""}`}
               style={{
                 borderTop: "1px solid rgba(237,232,223,0.08)",
-                borderRight: i < 2 ? "1px solid rgba(237,232,223,0.08)" : "none",
-                paddingTop: "1.5rem",
-                paddingRight: i < 2 ? "2rem" : "0",
-                paddingLeft: i > 0 ? "2rem" : "0",
-                paddingBottom: "1.5rem",
               }}
             >
               {/* Section number */}
