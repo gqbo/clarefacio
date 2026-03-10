@@ -124,10 +124,11 @@ export default function Navbar() {
               <a
                 href="#contacto"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 px-5 py-3 text-xs tracking-[0.15em] uppercase font-medium bg-[#c41e28] text-white hover:bg-[#a01820] transition-colors text-center"
+                className="group mt-4 inline-flex items-center justify-center gap-3 px-5 py-4 text-xs tracking-[0.2em] uppercase font-medium bg-[#c41e28] text-white hover:bg-[#9c1820] transition-colors"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
                 {t("contact")}
+                <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
               </a>
             </div>
           </motion.div>
