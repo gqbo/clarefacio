@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import Hero from "@/components/sections/Hero";
 import WhyCR from "@/components/sections/WhyCR";
+import About from "@/components/sections/About";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <WhyCR />
+      <About />
       <LanguageSwitcher />
     </main>
   );
