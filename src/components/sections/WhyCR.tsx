@@ -56,69 +56,70 @@ export default function WhyCR() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
           {/* Left column — heading + intro + stats */}
-          <div className="flex flex-col justify-between">
-            {/* Eyebrow */}
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7 }}
-              className="mb-6"
-            >
-              <span
-                className="italic text-[#c41e28] tracking-[0.35em] uppercase"
-                style={{ fontFamily: "var(--font-garamond)", fontSize: "0.8rem" }}
+          <div className="flex flex-col">
+            {/* Top group: eyebrow + heading + rule + intro */}
+            <div className="flex flex-col gap-4">
+              {/* Eyebrow */}
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7 }}
               >
-                Costa Rica
-              </span>
-            </motion.p>
+                <span
+                  className="italic text-[#c41e28] tracking-[0.35em] uppercase"
+                  style={{ fontFamily: "var(--font-garamond)", fontSize: "0.8rem" }}
+                >
+                  Costa Rica
+                </span>
+              </motion.p>
 
-            {/* Headline */}
-            <motion.h2
-              initial={{ opacity: 0, y: 32 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light leading-[1.1] mb-6 whitespace-nowrap"
-              style={{
-                fontFamily: "var(--font-garamond)",
-                fontSize: "clamp(2rem, 3.6vw, 3.4rem)",
-                color: "#ede8df",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              {t("title")}
-            </motion.h2>
+              {/* Headline */}
+              <motion.h2
+                initial={{ opacity: 0, y: 32 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="font-light leading-[1.1] whitespace-nowrap"
+                style={{
+                  fontFamily: "var(--font-garamond)",
+                  fontSize: "clamp(2rem, 3.6vw, 3.4rem)",
+                  color: "#ede8df",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                {t("title")}
+              </motion.h2>
 
-            {/* Ornamental rule — right below title */}
-            <motion.div
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
-              className="origin-left"
-              style={{ height: "1px", background: "rgba(237,232,223,0.12)", width: "100%" }}
-            />
+              {/* Ornamental rule — right below title */}
+              <motion.div
+                initial={{ scaleX: 0, opacity: 0 }}
+                animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
+                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+                className="origin-left"
+                style={{ height: "1px", background: "rgba(237,232,223,0.12)", width: "100%" }}
+              />
 
-            {/* Intro paragraph */}
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.45 }}
-              style={{
-                fontFamily: "var(--font-dm-sans)",
-                fontSize: "0.9rem",
-                color: "rgba(237,232,223,0.5)",
-                lineHeight: "1.8",
-                paddingTop: "1.5rem",
-              }}
-            >
-              {t("intro")}
-            </motion.p>
+              {/* Intro paragraph */}
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.45 }}
+                style={{
+                  fontFamily: "var(--font-dm-sans)",
+                  fontSize: "0.9rem",
+                  color: "rgba(237,232,223,0.5)",
+                  lineHeight: "1.8",
+                }}
+              >
+                {t("intro")}
+              </motion.p>
+            </div>
 
             {/* Stats — anchored to bottom */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="flex flex-col gap-8 mt-6 lg:mt-0"
+              className="flex flex-col gap-8 mt-8"
             >
               {[
                 { num: "6%", label: t("stat_biodiversity") },
