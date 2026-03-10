@@ -4,6 +4,7 @@ import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import Hero from "@/components/sections/Hero";
 import WhyCR from "@/components/sections/WhyCR";
 import About from "@/components/sections/About";
+import Services from "@/components/sections/Services";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <WhyCR />
       <About />
+      <Services />
       <LanguageSwitcher />
     </main>
   );
