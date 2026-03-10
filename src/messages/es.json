@@ -32,10 +32,19 @@
     "stat_literacy": "de alfabetización"
   },
   "about": {
-    "title": "Nuestro Equipo",
-    "subtitle": "Abogados especializados con experiencia internacional",
-    "meet_team": "Conocer al equipo",
-    "learn_more": "Ver perfil"
+    "eyebrow": "Clare Facio",
+    "title": "Nosotros",
+    "pillar1": "Desde 2019, a la vanguardia del derecho en Costa Rica.",
+    "pillar2": "El puente entre sus objetivos y el potencial de este país.",
+    "pillar3": "Relaciones perdurables, fundadas en confianza y conocimiento.",
+    "lawyer1_name": "Lic. Gabriel Clare Facio",
+    "lawyer1_title": "Cónsul, Abogado y Notario Público",
+    "lawyer2_name": "Lic. Enrique Loría Brunker",
+    "lawyer2_title": "Abogado y Notario Público",
+    "lawyer3_name": "Lic. Manuel Giménez Costillo",
+    "lawyer3_title": "Abogado y Notario Público",
+    "lawyer4_name": "Lic. Nicole González Guardia",
+    "lawyer4_title": "Abogada"
   },
   "services": {
     "title": "Nuestros Servicios"

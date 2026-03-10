@@ -32,10 +32,19 @@
     "stat_literacy": "literacy rate"
   },
   "about": {
-    "title": "Our Team",
-    "subtitle": "Specialized attorneys with international experience",
-    "meet_team": "Meet the team",
-    "learn_more": "View profile"
+    "eyebrow": "Clare Facio",
+    "title": "About Us",
+    "pillar1": "Since 2019, at the forefront of law in Costa Rica.",
+    "pillar2": "The bridge between your goals and the potential of this country.",
+    "pillar3": "Lasting relationships, built on trust and expertise.",
+    "lawyer1_name": "Lic. Gabriel Clare Facio",
+    "lawyer1_title": "Consul, Attorney & Notary Public",
+    "lawyer2_name": "Lic. Enrique Loría Brunker",
+    "lawyer2_title": "Attorney & Notary Public",
+    "lawyer3_name": "Lic. Manuel Giménez Costillo",
+    "lawyer3_title": "Attorney & Notary Public",
+    "lawyer4_name": "Lic. Nicole González Guardia",
+    "lawyer4_title": "Attorney"
   },
   "services": {
     "title": "Our Services"
