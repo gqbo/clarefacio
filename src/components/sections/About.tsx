@@ -19,9 +19,9 @@ const LAWYERS = [
 ] as const;
 
 const PILLARS = [
-  { num: "01", key: "pillar1" },
-  { num: "02", key: "pillar2" },
-  { num: "03", key: "pillar3" },
+  { key: "pillar1" },
+  { key: "pillar2" },
+  { key: "pillar3" },
 ] as const;
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -79,48 +79,41 @@ export default function About() {
           </motion.h2>
         </div>
 
-        {/* ── Firm pillars — three editorial statements ───────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-20">
-          {PILLARS.map(({ num, key }, i) => (
+        {/* ── Firm pillars — editorial em-dash statements ─────────────────── */}
+        <div className="flex flex-col max-w-2xl mb-20">
+          {PILLARS.map(({ key }, i) => (
             <motion.div
-              key={num}
+              key={key}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.45 + i * 0.1, ease: EASE_EDITORIAL }}
-              className={`relative group pt-6 pb-6 ${i > 0 ? "md:pl-8" : ""} ${i < 2 ? "md:pr-8 md:[border-right:1px_solid_rgba(237,232,223,0.08)]" : ""}`}
-              style={{ borderTop: "1px solid rgba(237,232,223,0.08)" }}
+              transition={{ duration: 0.7, delay: 0.45 + i * 0.12, ease: EASE_EDITORIAL }}
+              className="flex items-baseline gap-4 py-4"
+              style={{ borderBottom: "1px solid rgba(237,232,223,0.08)" }}
             >
               <span
-                className="block leading-none mb-3"
                 style={{
+                  color: "#c41e28",
                   fontFamily: "var(--font-garamond)",
-                  fontSize: "1.6rem",
-                  letterSpacing: "0.05em",
-                  color: "rgba(196,30,40,0.5)",
-                  fontStyle: "italic",
+                  fontSize: "1.1rem",
+                  flexShrink: 0,
+                  lineHeight: 1,
                 }}
               >
-                {num}
+                —
               </span>
-
               <p
                 style={{
-                  fontFamily: "var(--font-dm-sans)",
-                  fontSize: "0.875rem",
-                  color: "rgba(237,232,223,0.55)",
+                  fontFamily: "var(--font-garamond)",
+                  fontSize: "clamp(1rem, 1.3vw, 1.2rem)",
+                  color: "rgba(237,232,223,0.72)",
                   lineHeight: "1.75",
+                  letterSpacing: "-0.005em",
                 }}
               >
                 {t(key)}
               </p>
             </motion.div>
           ))}
-
-          {/* Bottom border for pillars */}
-          <div
-            className="col-span-1 md:col-span-3"
-            style={{ borderTop: "1px solid rgba(237,232,223,0.08)" }}
-          />
         </div>
 
         {/* ── Lawyers grid ─────────────────────────────────────────────────── */}
