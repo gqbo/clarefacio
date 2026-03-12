@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
         scrolled
           ? "bg-[#0d0d0d] border-b border-[#c41e28]/20"
           : "bg-transparent"
@@ -71,16 +71,13 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <a
               href="#contacto"
-              className="group inline-flex items-center gap-3 px-9 py-4 text-white transition-all duration-300"
+              className="group inline-flex items-center gap-3 px-9 py-4 text-white bg-[#c41e28] hover:bg-[#9c1820] transition-colors duration-300"
               style={{
                 fontFamily: "var(--font-dm-sans)",
                 fontSize: "0.7rem",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                backgroundColor: "#c41e28",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#9c1820")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#c41e28")}
             >
               {t("contact")}
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />

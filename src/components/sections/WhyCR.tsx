@@ -177,7 +177,7 @@ export default function WhyCR() {
               >
                 {/* Crimson left accent */}
                 <div
-                  className="absolute left-0 top-0 bottom-0 w-px transition-all duration-500 group-hover:opacity-100"
+                  className="absolute left-0 top-0 bottom-0 w-px transition-opacity duration-500 group-hover:opacity-100"
                   style={{
                     background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.55), transparent)",
                     opacity: 0.6,

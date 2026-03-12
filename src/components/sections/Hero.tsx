@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import VideoBackground from "@/components/ui/VideoBackground";
-import { fadeUp } from "@/lib/motion";
+import { fadeUp, EASE_EDITORIAL } from "@/lib/motion";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -31,7 +31,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-end overflow-hidden">
 
       {/* Background video */}
-      <VideoBackground src="/images/Serene_Waterfall_Loop_Video.mp4" />
+      <VideoBackground src="/images/Waterfall_Loop_Video_Webm.webm" fallbackSrc="/images/Waterfall_Loop_Video_MP4.mp4" />
 
       {/* Multi-layer overlay — deep and warm, not flat tech-black */}
       <div className="absolute inset-0 bg-linear-to-t from-[#0c0907] via-[#0c0907]/80 to-[#0c0907]/30" />
@@ -59,7 +59,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.0, delay: 0.25, ease: EASE_EDITORIAL }}
           className="mb-10 font-light flex flex-col"
           style={{
             fontFamily: "var(--font-garamond)",
@@ -85,7 +85,7 @@ export default function Hero() {
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.55, ease: EASE_EDITORIAL }}
           className="origin-left mb-8"
           style={{ height: "1px", background: "rgba(237,232,223,0.12)", maxWidth: "28rem" }}
         />
@@ -124,7 +124,7 @@ export default function Hero() {
 
           <a
             href="#nosotros"
-            className="inline-flex items-center justify-center gap-3 px-9 py-4 text-[rgba(237,232,223,0.6)] hover:text-[rgba(237,232,223,1)] border border-[rgba(237,232,223,0.2)] hover:border-[rgba(237,232,223,0.45)] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-3 px-9 py-4 text-[rgba(237,232,223,0.6)] hover:text-[rgba(237,232,223,1)] border border-[rgba(237,232,223,0.2)] hover:border-[rgba(237,232,223,0.45)] transition-colors duration-300"
             style={{
               fontFamily: "var(--font-dm-sans)",
               fontSize: "0.7rem",

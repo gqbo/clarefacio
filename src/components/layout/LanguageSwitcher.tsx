@@ -59,23 +59,16 @@ export default function LanguageSwitcher() {
               <button
                 key={loc}
                 onClick={() => switchLocale(loc)}
-                className="w-full text-left px-4 py-3 flex items-center justify-between transition-colors duration-150 group"
+                className={`w-full text-left px-4 py-3 flex items-center justify-between transition-colors duration-150 group ${
+                  loc === locale
+                    ? "bg-[rgba(196,30,40,0.08)]"
+                    : "hover:bg-[rgba(237,232,223,0.04)]"
+                }`}
                 style={{
                   borderBottom:
                     i < routing.locales.length - 1
                       ? "1px solid rgba(237,232,223,0.06)"
                       : "none",
-                  background: loc === locale ? "rgba(196,30,40,0.08)" : "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  if (loc !== locale)
-                    (e.currentTarget as HTMLButtonElement).style.background =
-                      "rgba(237,232,223,0.04)";
-                }}
-                onMouseLeave={(e) => {
-                  if (loc !== locale)
-                    (e.currentTarget as HTMLButtonElement).style.background =
-                      "transparent";
                 }}
               >
                 <span

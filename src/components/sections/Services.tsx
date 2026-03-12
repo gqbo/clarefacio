@@ -160,7 +160,7 @@ export default function Services() {
                 </h3>
 
                 <span
-                  className="inline-flex items-center gap-2 transition-gap duration-300"
+                  className="inline-flex items-center gap-2"
                   style={{
                     fontFamily: "var(--font-garamond)",
                     fontStyle: "italic",

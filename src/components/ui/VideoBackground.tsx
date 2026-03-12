@@ -3,15 +3,19 @@
 import { useRef, useEffect } from "react";
 
 const FADE_OUT_START = 6.0;
-const FADE_IN_END = 2.0;
+const FADE_IN_END = 1.5;
 const VIDEO_DURATION = 8;
 const FADE_OUT_DURATION = VIDEO_DURATION - FADE_OUT_START;
-const FADE_IN_DURATION = FADE_IN_END;
+const FADE_IN_DURATION = 1.0;
 
-export default function VideoBackground({ src }: { src: string }) {
+interface VideoBackgroundProps {
+  src: string;
+  fallbackSrc?: string;
+}
+
+export default function VideoBackground({ src, fallbackSrc }: VideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const video = videoRef.current;
     const overlay = overlayRef.current;
@@ -39,16 +43,19 @@ export default function VideoBackground({ src }: { src: string }) {
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        src={src}
         autoPlay
         loop
         muted
         playsInline
-      />
+        preload="metadata"
+      >
+        <source src={src} type="video/webm" />
+        {fallbackSrc && <source src={fallbackSrc} type="video/mp4" />}
+      </video>
       <div
         ref={overlayRef}
         className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 1, opacity: 0, backgroundColor: "rgb(12, 9, 7)" }}
+        style={{ zIndex: 1, opacity: 1, backgroundColor: "rgb(12, 9, 7)" }}
       />
     </>
   );
