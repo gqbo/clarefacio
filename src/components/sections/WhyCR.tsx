@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
@@ -35,13 +36,17 @@ export default function WhyCR() {
       className="relative flex items-center overflow-hidden"
     >
       {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/whycr-bg.jpg')",
-          backgroundPosition: "70% center",
-        }}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="/images/whycr-bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          style={{ objectPosition: "70% center" }}
+          sizes="100vw"
+          quality={80}
+        />
+      </div>
 
       {/* Multi-layer dark overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-[#0c0907] via-[#0c0907]/92 to-[#0c0907]/55" />
@@ -55,7 +60,7 @@ export default function WhyCR() {
 
       {/* Left ornamental vertical rule */}
       <div
-        className="absolute left-0 top-1/4 bottom-1/4 w-px"
+        className="absolute left-0 top-1/4 bottom-1/4 w-px hidden sm:block"
         style={{
           background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
         }}

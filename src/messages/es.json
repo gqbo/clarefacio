@@ -44,7 +44,8 @@
     "lawyer3_name": "Lic. Manuel Giménez Costillo",
     "lawyer3_title": "Abogado y Notario Público",
     "lawyer4_name": "Lic. Nicole González Guardia",
-    "lawyer4_title": "Abogada"
+    "lawyer4_title": "Abogada",
+    "cta_team": "Conoce a todo el equipo"
   },
   "services": {
     "eyebrow": "ÁREAS DE PRÁCTICA",
@@ -127,6 +128,7 @@
     "tagline": "Soluciones legales en Costa Rica para inversores internacionales y expatriados.",
     "nav_title": "Navegación",
     "services_title": "Servicios",
+    "contact_title": "Información",
     "social_title": "Redes Sociales",
     "whycr": "¿Por qué Costa Rica?",
     "hours_label": "Horario",

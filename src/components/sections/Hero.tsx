@@ -37,9 +37,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-t from-[#0c0907] via-[#0c0907]/80 to-[#0c0907]/30" />
       <div className="absolute inset-0 bg-linear-to-r from-[#0c0907]/70 via-transparent to-transparent" />
 
-      {/* Ornamental vertical rule — left margin */}
+      {/* Ornamental vertical rule — left edge */}
       <div
-        className="absolute left-0 sm:left-10 top-1/3 bottom-1/3 w-px"
+        className="absolute left-0 top-1/3 bottom-1/3 w-px hidden sm:block"
         style={{
           background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
         }}

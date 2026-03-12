@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 
 // ─── Social icon SVGs ────────────────────────────────────────────────────────
@@ -60,10 +59,10 @@ function PhoneIcon() {
 
 // ─── Column header ────────────────────────────────────────────────────────────
 
-function ColLabel({ children }: { children: React.ReactNode }) {
+function ColLabel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <p
-      className="mb-6 uppercase tracking-[0.28em] italic"
+      className={`mb-6 uppercase tracking-[0.28em] italic ${className}`}
       style={{
         fontFamily: "var(--font-garamond)",
         color: "rgba(237,232,223,0.38)",
@@ -156,42 +155,22 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* ── Main grid ─────────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10 pt-16 pb-14">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-10 pt-12 pb-12 items-start">
 
-          {/* Col 1 — Brand + contact info */}
-          <div>
-            <a href={`/${locale}`} className="inline-block mb-6">
-              <Image
-                src="/images/logo.png"
-                alt="Clare Facio Legal"
-                width={110}
-                height={52}
-                className="h-10 w-auto object-contain"
-              />
-            </a>
-
-            <p
-              className="mb-8 leading-relaxed max-w-[230px]"
-              style={{
-                fontFamily: "var(--font-dm-sans)",
-                color: "#7a7268",
-                fontSize: "0.78rem",
-                lineHeight: "1.8",
-              }}
-            >
-              {t("tagline")}
-            </p>
+          {/* Col 1 — Brand + contact info · mobile: row 1 col 1 */}
+          <div className="order-1 lg:order-1">
+            <ColLabel className="mb-5">{t("contact_title")}</ColLabel>
 
             {/* Contact details stack */}
-            <div className="space-y-5">
+            <div className="space-y-3">
               {/* Hours */}
               <div>
                 <p
-                  className="mb-1 uppercase tracking-[0.18em]"
+                  className="mb-0.5 uppercase tracking-[0.18em]"
                   style={{
                     fontFamily: "var(--font-dm-sans)",
                     color: "rgba(196,30,40,0.65)",
-                    fontSize: "0.62rem",
+                    fontSize: "0.6rem",
                   }}
                 >
                   {t("hours_label")}
@@ -200,7 +179,7 @@ export default function Footer() {
                   style={{
                     fontFamily: "var(--font-dm-sans)",
                     color: "#ede8df",
-                    fontSize: "0.78rem",
+                    fontSize: "0.75rem",
                   }}
                 >
                   {t("hours")}
@@ -210,22 +189,22 @@ export default function Footer() {
               {/* Email */}
               <div>
                 <p
-                  className="mb-1 uppercase tracking-[0.18em]"
+                  className="mb-0.5 uppercase tracking-[0.18em]"
                   style={{
                     fontFamily: "var(--font-dm-sans)",
                     color: "rgba(196,30,40,0.65)",
-                    fontSize: "0.62rem",
+                    fontSize: "0.6rem",
                   }}
                 >
                   {t("email_label")}
                 </p>
                 <a
                   href="mailto:info@clarefacio.com"
-                  className="hover:text-[#c41e28] transition-colors duration-300"
+                  className="hover:text-[#c41e28] transition-colors duration-300 break-all"
                   style={{
                     fontFamily: "var(--font-dm-sans)",
                     color: "#7a7268",
-                    fontSize: "0.78rem",
+                    fontSize: "0.75rem",
                   }}
                 >
                   info@clarefacio.com
@@ -235,11 +214,11 @@ export default function Footer() {
               {/* Phone */}
               <div>
                 <p
-                  className="mb-1 uppercase tracking-[0.18em]"
+                  className="mb-0.5 uppercase tracking-[0.18em]"
                   style={{
                     fontFamily: "var(--font-dm-sans)",
                     color: "rgba(196,30,40,0.65)",
-                    fontSize: "0.62rem",
+                    fontSize: "0.6rem",
                   }}
                 >
                   {t("phone_label")}
@@ -250,7 +229,7 @@ export default function Footer() {
                   style={{
                     fontFamily: "var(--font-dm-sans)",
                     color: "#7a7268",
-                    fontSize: "0.78rem",
+                    fontSize: "0.75rem",
                   }}
                 >
                   +506 4052 0600
@@ -259,10 +238,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 — Navigation */}
-          <div>
+          {/* Col 4 — Social · mobile: row 1 col 2 */}
+          <div className="order-2 lg:order-4">
+            <ColLabel className="mb-5">{t("social_title")}</ColLabel>
+            <div className="grid grid-cols-2 gap-2">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target={s.href.startsWith("tel:") ? undefined : "_blank"}
+                  rel={s.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
+                  aria-label={s.label}
+                  className="w-10 h-10 flex items-center justify-center text-[#7a7268] hover:text-[#c41e28] hover:border-[rgba(196,30,40,0.4)] transition-colors duration-300"
+                  style={{ border: "1px solid rgba(237,232,223,0.09)" }}
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Col 2 — Navigation · mobile: row 2 col 1 */}
+          <div className="order-3 lg:order-2">
             <ColLabel>{t("nav_title")}</ColLabel>
-            <ul className="space-y-[0.9rem]">
+            <ul className="space-y-[0.75rem]">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -271,7 +270,7 @@ export default function Footer() {
                     style={{
                       fontFamily: "var(--font-dm-sans)",
                       color: "#7a7268",
-                      fontSize: "0.82rem",
+                      fontSize: "0.8rem",
                     }}
                   >
                     {link.label}
@@ -281,10 +280,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3 — Services */}
-          <div>
+          {/* Col 3 — Services · mobile: row 2 col 2 */}
+          <div className="order-4 lg:order-3">
             <ColLabel>{t("services_title")}</ColLabel>
-            <ul className="space-y-[0.9rem]">
+            <ul className="space-y-[0.75rem]">
               {services.map((svc) => (
                 <li key={svc}>
                   <span
@@ -292,7 +291,7 @@ export default function Footer() {
                     style={{
                       fontFamily: "var(--font-dm-sans)",
                       color: "#7a7268",
-                      fontSize: "0.82rem",
+                      fontSize: "0.8rem",
                     }}
                   >
                     {svc}
@@ -300,26 +299,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Col 4 — Social */}
-          <div>
-            <ColLabel>{t("social_title")}</ColLabel>
-            <div className="grid grid-cols-3 gap-3">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target={s.href.startsWith("tel:") ? undefined : "_blank"}
-                  rel={s.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
-                  aria-label={s.label}
-                  className="w-11 h-11 flex items-center justify-center text-[#7a7268] hover:text-[#c41e28] hover:border-[rgba(196,30,40,0.4)] transition-colors duration-300"
-                  style={{ border: "1px solid rgba(237,232,223,0.09)" }}
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 

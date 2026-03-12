@@ -13,7 +13,7 @@ import { CARD_BG } from "@/lib/tokens";
 // `as const` lets TypeScript infer literal key types automatically.
 // Adding a lawyer only requires updating this array + translation files.
 const LAWYERS = [
-  { image: "/images/lawyers/gabriel-clare-facio.png",     nameKey: "lawyer1_name", titleKey: "lawyer1_title" },
+  { image: "/images/lawyers/gabriel-clare-facio.jpg",     nameKey: "lawyer1_name", titleKey: "lawyer1_title" },
   { image: "/images/lawyers/enrique_loria_brunker.jpg",   nameKey: "lawyer2_name", titleKey: "lawyer2_title" },
   { image: "/images/lawyers/manuel_gimenez_costillo.jpg", nameKey: "lawyer3_name", titleKey: "lawyer3_title" },
   { image: "/images/lawyers/nicole_gonzalez_guardia.jpg", nameKey: "lawyer4_name", titleKey: "lawyer4_title" },
@@ -48,7 +48,7 @@ export default function About() {
 
       {/* Left ornamental vertical rule */}
       <div
-        className="absolute left-0 top-1/4 bottom-1/4 w-px pointer-events-none"
+        className="absolute left-0 top-1/4 bottom-1/4 w-px pointer-events-none hidden sm:block"
         style={{
           background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
         }}
@@ -137,8 +137,8 @@ export default function About() {
                   src={lawyer.image}
                   alt={t(lawyer.nameKey)}
                   fill
-                  className="object-cover object-top transition-all duration-700 group-hover:scale-105"
-                  style={{ filter: "grayscale(25%)" }}
+                  className="object-cover object-top grayscale-[40%] brightness-90 group-hover:grayscale-0 group-hover:brightness-105 group-hover:scale-105"
+                  style={{ transition: "filter 800ms cubic-bezier(0.16,1,0.3,1), transform 900ms cubic-bezier(0.16,1,0.3,1)" }}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
 
@@ -150,19 +150,6 @@ export default function About() {
                   }}
                 />
 
-                {/* Crimson hover tint */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ backgroundColor: "rgba(196,30,40,0.08)" }}
-                />
-
-                {/* Crimson left accent line */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.7), transparent)",
-                  }}
-                />
               </div>
 
               {/* Name + Title */}
@@ -197,6 +184,30 @@ export default function About() {
             </motion.div>
           ))}
         </div>
+
+        {/* ── CTA — Meet the whole team ────────────────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 1.1, ease: EASE_EDITORIAL }}
+          className="mt-10 flex justify-center"
+        >
+          <button
+            className="inline-flex items-center gap-4 px-12 py-4 transition-all duration-300 cursor-pointer hover:border-[rgba(196,30,40,0.5)]"
+            style={{
+              fontFamily: "var(--font-garamond)",
+              fontSize: "0.9rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#ede8df",
+              border: "1px solid rgba(237,232,223,0.18)",
+              background: "none",
+            }}
+          >
+            {t("cta_team")}
+            <span style={{ color: "#c41e28", fontSize: "1.1rem" }}>→</span>
+          </button>
+        </motion.div>
 
       </div>
 

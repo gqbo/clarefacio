@@ -58,6 +58,14 @@ export default function Services() {
         style={{ background: "linear-gradient(to bottom, #0c0907 0%, transparent 100%)" }}
       />
 
+      {/* Left ornamental vertical rule */}
+      <div
+        className="absolute left-0 top-1/4 bottom-1/4 w-px pointer-events-none hidden sm:block"
+        style={{
+          background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
+        }}
+      />
+
       {/* Content */}
       <div
         ref={ref}

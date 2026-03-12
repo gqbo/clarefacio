@@ -159,9 +159,17 @@ export default function Contact() {
         }}
       />
 
+      {/* Left ornamental vertical rule */}
+      <div
+        className="absolute left-0 top-1/4 bottom-1/4 w-px pointer-events-none hidden sm:block"
+        style={{
+          background: "linear-gradient(to bottom, transparent, rgba(196,30,40,0.5), transparent)",
+        }}
+      />
+
       {/* Right ornamental vertical rule */}
       <div
-        className="absolute right-0 top-1/4 bottom-1/4 w-px pointer-events-none"
+        className="absolute right-0 top-1/4 bottom-1/4 w-px pointer-events-none hidden sm:block"
         style={{
           background:
             "linear-gradient(to bottom, transparent, rgba(196,30,40,0.4), transparent)",
