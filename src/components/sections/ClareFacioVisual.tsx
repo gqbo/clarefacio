@@ -42,18 +42,6 @@ export default function ClareFacioVisual() {
       className="relative overflow-hidden"
       style={{ backgroundColor: "#0c0907" }}
     >
-      {/* Crosshatch texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(237,232,223,0.022) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(237,232,223,0.022) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
       {/* Top fade */}
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none z-10"
