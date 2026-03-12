@@ -123,6 +123,16 @@
     "subscribe": "Suscribirse"
   },
   "footer": {
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "tagline": "Soluciones legales en Costa Rica para inversores internacionales y expatriados.",
+    "nav_title": "Navegación",
+    "services_title": "Servicios",
+    "social_title": "Redes Sociales",
+    "whycr": "¿Por qué Costa Rica?",
+    "hours_label": "Horario",
+    "hours": "Lun – Vie, 8:00 am – 5:00 pm",
+    "email_label": "Correo",
+    "phone_label": "Teléfono",
+    "call_label": "Llamar"
   }
 }

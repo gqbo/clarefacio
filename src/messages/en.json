@@ -123,6 +123,16 @@
     "subscribe": "Subscribe"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "tagline": "Legal solutions in Costa Rica for international investors and expatriates.",
+    "nav_title": "Navigation",
+    "services_title": "Services",
+    "social_title": "Social Media",
+    "whycr": "Why Costa Rica?",
+    "hours_label": "Office Hours",
+    "hours": "Mon – Fri, 8:00 am – 5:00 pm",
+    "email_label": "Email",
+    "phone_label": "Phone",
+    "call_label": "Call"
   }
 }

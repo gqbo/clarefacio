@@ -1,5 +1,6 @@
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import Hero from "@/components/sections/Hero";
 import WhyCR from "@/components/sections/WhyCR";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Services />
       <ClareFacioVisual />
       <Contact />
+      <Footer />
       <LanguageSwitcher />
     </main>
   );
