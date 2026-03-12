@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import { EASE_EDITORIAL } from "@/lib/motion";
+import { CARD_BG } from "@/lib/tokens";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 // To add a new video: append an entry here + add its titleKey to all 3 message files.
@@ -99,7 +100,7 @@ export default function ClareFacioVisual() {
           {/* ── Playlist ───────────────────────────────────────────────── */}
           <div
             className="lg:w-[38%] flex flex-col"
-            style={{ borderRight: "1px solid rgba(237,232,223,0.07)" }}
+            style={{ backgroundColor: CARD_BG, borderRight: "1px solid rgba(237,232,223,0.07)" }}
           >
             {/* Playlist header */}
             <div

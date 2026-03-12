@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import { EASE_EDITORIAL } from "@/lib/motion";
+import { CARD_BG } from "@/lib/tokens";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -117,10 +118,7 @@ export default function About() {
         </div>
 
         {/* ── Lawyers grid ─────────────────────────────────────────────────── */}
-        <div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-px"
-          style={{ border: "1px solid rgba(237,232,223,0.08)" }}
-        >
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {LAWYERS.map((lawyer, i) => (
             <motion.div
               key={lawyer.nameKey}
@@ -129,8 +127,8 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.6 + i * 0.12, ease: EASE_EDITORIAL }}
               className="relative group overflow-hidden"
               style={{
-                backgroundColor: "#0c0907",
-                borderRight: i < 3 ? "1px solid rgba(237,232,223,0.08)" : "none",
+                backgroundColor: CARD_BG,
+                border: "1px solid rgba(237,232,223,0.07)",
               }}
             >
               {/* Photo */}
