@@ -6,6 +6,7 @@ import WhyCR from "@/components/sections/WhyCR";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import ClareFacioVisual from "@/components/sections/ClareFacioVisual";
+import Contact from "@/components/sections/Contact";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,6 +21,7 @@ export default function HomePage() {
       <About />
       <Services />
       <ClareFacioVisual />
+      <Contact />
       <LanguageSwitcher />
     </main>
   );
