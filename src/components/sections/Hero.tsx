@@ -29,10 +29,14 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden">
 
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero-bg.webp')" }}
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/images/Serene_Waterfall_Loop_Video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
       />
 
       {/* Multi-layer overlay — deep and warm, not flat tech-black */}
