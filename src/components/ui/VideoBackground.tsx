@@ -2,8 +2,8 @@
 
 import { useRef, useEffect } from "react";
 
-const FADE_OUT_START = 7.5;
-const FADE_IN_END = 0.5;
+const FADE_OUT_START = 6.0;
+const FADE_IN_END = 2.0;
 const VIDEO_DURATION = 8;
 const FADE_OUT_DURATION = VIDEO_DURATION - FADE_OUT_START;
 const FADE_IN_DURATION = FADE_IN_END;
@@ -48,7 +48,7 @@ export default function VideoBackground({ src }: { src: string }) {
       <div
         ref={overlayRef}
         className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 1, opacity: 0, backgroundColor: "black" }}
+        style={{ zIndex: 1, opacity: 0, backgroundColor: "rgb(12, 9, 7)" }}
       />
     </>
   );

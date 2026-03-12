@@ -164,7 +164,7 @@ export default function Services() {
                   style={{
                     fontFamily: "var(--font-garamond)",
                     fontStyle: "italic",
-                    fontSize: "0.9rem",
+                    fontSize: "1.1rem",
                     color: "#c41e28",
                     letterSpacing: "0.03em",
                   }}
