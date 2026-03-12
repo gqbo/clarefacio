@@ -173,9 +173,10 @@ export default function Contact() {
         ref={ref}
         className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pt-20 pb-24"
       >
-        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-10 lg:gap-14">
+        {/* ── TOP: Header + Info | Form ─────────────────────────────────── */}
+        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-10 lg:gap-14 mb-14">
 
-          {/* ── LEFT: Header + Info + Map ───────────────────────────────── */}
+          {/* LEFT: Section header + contact info */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? ANIMATE_IN : {}}
@@ -261,67 +262,9 @@ export default function Contact() {
                 value={t("hours_value")}
               />
             </div>
-
-            {/* Office tabs + maps */}
-            <div>
-              <div
-                className="flex"
-                style={{ borderBottom: "1px solid rgba(237,232,223,0.08)" }}
-              >
-                {OFFICES.map(({ key, labelKey }) => (
-                  <button
-                    key={key}
-                    onClick={() => setActiveOffice(key)}
-                    className="flex-1 py-3 transition-colors duration-200 cursor-pointer"
-                    style={{
-                      fontFamily: "var(--font-dm-sans)",
-                      fontSize: "0.72rem",
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      color: activeOffice === key ? "#ede8df" : "rgba(237,232,223,0.38)",
-                      background: "transparent",
-                      border: "none",
-                      borderBottom:
-                        activeOffice === key
-                          ? "2px solid #c41e28"
-                          : "2px solid transparent",
-                      marginBottom: "-1px",
-                    }}
-                  >
-                    {t(labelKey)}
-                  </button>
-                ))}
-              </div>
-
-              {/* All 3 maps preloaded — toggled via display for instant tab switching */}
-              <div
-                className="overflow-hidden"
-                style={{
-                  border: "1px solid rgba(237,232,223,0.07)",
-                  borderTop: "none",
-                }}
-              >
-                {OFFICES.map(({ key, embedUrl, labelKey }) => (
-                  <iframe
-                    key={key}
-                    src={embedUrl}
-                    width="100%"
-                    height="260"
-                    style={{
-                      border: 0,
-                      display: activeOffice === key ? "block" : "none",
-                      filter: "grayscale(25%) contrast(1.05) brightness(0.88)",
-                    }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={t(labelKey)}
-                  />
-                ))}
-              </div>
-            </div>
           </motion.div>
 
-          {/* ── RIGHT: Form ─────────────────────────────────────────────── */}
+          {/* RIGHT: Form */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? ANIMATE_IN : {}}
@@ -446,6 +389,74 @@ export default function Contact() {
             </form>
           </motion.div>
         </div>
+
+        {/* ── BOTTOM: Office map (full width) ───────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? ANIMATE_IN : {}}
+          transition={{ duration: 0.8, delay: 0.5, ease: EASE_EDITORIAL }}
+        >
+          {/* Tabs */}
+          <div
+            className="flex"
+            style={{ borderBottom: "1px solid rgba(237,232,223,0.08)" }}
+          >
+            {OFFICES.map(({ key, labelKey }) => (
+              <button
+                key={key}
+                onClick={() => setActiveOffice(key)}
+                className="px-8 py-3 transition-colors duration-200 cursor-pointer"
+                style={{
+                  fontFamily: "var(--font-dm-sans)",
+                  fontSize: "0.72rem",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: activeOffice === key ? "#ede8df" : "rgba(237,232,223,0.38)",
+                  background: "transparent",
+                  border: "none",
+                  borderBottom:
+                    activeOffice === key
+                      ? "2px solid #c41e28"
+                      : "2px solid transparent",
+                  marginBottom: "-1px",
+                }}
+              >
+                {t(labelKey)}
+              </button>
+            ))}
+          </div>
+
+          {/* Maps — all preloaded with eager, toggled via visibility */}
+          <div
+            className="relative overflow-hidden"
+            style={{
+              border: "1px solid rgba(237,232,223,0.07)",
+              borderTop: "none",
+              height: "380px",
+            }}
+          >
+            {OFFICES.map(({ key, embedUrl, labelKey }) => (
+              <iframe
+                key={key}
+                src={embedUrl}
+                width="100%"
+                height="100%"
+                style={{
+                  border: 0,
+                  position: "absolute",
+                  inset: 0,
+                  opacity: activeOffice === key ? 1 : 0,
+                  pointerEvents: activeOffice === key ? "auto" : "none",
+                  transition: "opacity 0.25s ease",
+                  filter: "grayscale(25%) contrast(1.05) brightness(0.88)",
+                }}
+                loading="eager"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={t(labelKey)}
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       {/* Bottom fade */}
