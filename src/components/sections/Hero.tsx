@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import VideoBackground from "@/components/ui/VideoBackground";
 import { fadeUp } from "@/lib/motion";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
@@ -30,14 +31,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-end overflow-hidden">
 
       {/* Background video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/images/Serene_Waterfall_Loop_Video.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      <VideoBackground src="/images/Serene_Waterfall_Loop_Video.mp4" />
 
       {/* Multi-layer overlay — deep and warm, not flat tech-black */}
       <div className="absolute inset-0 bg-linear-to-t from-[#0c0907] via-[#0c0907]/80 to-[#0c0907]/30" />
