@@ -94,23 +94,6 @@ export default function Services() {
               {t("title")}
             </motion.h2>
           </div>
-
-          {/* Section number */}
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 1.2, delay: 0.2, ease: EASE_EDITORIAL }}
-            className="hidden lg:block font-light leading-none select-none"
-            style={{
-              fontFamily: "var(--font-garamond)",
-              fontSize: "clamp(5rem, 9vw, 9rem)",
-              color: "rgba(196,30,40,0.07)",
-              letterSpacing: "-0.02em",
-              lineHeight: 1,
-            }}
-          >
-            04
-          </motion.span>
         </div>
 
         {/* ── 2×3 grid ──────────────────────────────────────────────────── */}
