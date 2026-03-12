@@ -46,7 +46,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pb-24 pt-48">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pb-16 pt-48">
 
         {/* Eyebrow */}
         <SectionEyebrow

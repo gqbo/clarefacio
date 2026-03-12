@@ -42,7 +42,7 @@ export default function Services() {
       {/* Content */}
       <div
         ref={ref}
-        className="relative z-20 w-full max-w-7xl mx-auto px-8 lg:px-14 pt-28 pb-28"
+        className="relative z-20 w-full max-w-7xl mx-auto px-8 lg:px-14 pt-16 pb-16"
       >
         {/* ── Section header ─────────────────────────────────────────────── */}
         <div className="mb-14">

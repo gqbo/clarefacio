@@ -49,7 +49,7 @@ export default function WhyCR() {
 
       {/* Top entry gradient */}
       <div
-        className="absolute top-0 left-0 right-0 h-90 pointer-events-none"
+        className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
         style={{ background: "linear-gradient(to bottom, #0c0907 0%, transparent 100%)" }}
       />
 
@@ -64,7 +64,7 @@ export default function WhyCR() {
       {/* Content */}
       <div
         ref={ref}
-        className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 py-16 lg:py-24"
+        className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 py-16"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
