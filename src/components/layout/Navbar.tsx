@@ -28,7 +28,6 @@ export default function Navbar() {
     { key: "home", href: "#" },
     { key: "about", href: "#nosotros" },
     { key: "services", href: "#servicios" },
-    { key: "blog", href: "#blog" },
   ];
 
   return (
