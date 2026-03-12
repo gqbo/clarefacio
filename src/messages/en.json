@@ -68,7 +68,16 @@
     "read_more": "Read more"
   },
   "visual": {
-    "title": "Clare Facio Visual"
+    "eyebrow": "CLARE FACIO VISUAL",
+    "title": "Clare Facio Visual",
+    "subtitle": "Educational videos on Costa Rican law and real estate — a resource for international investors and expatriates.",
+    "playlist_label": "Playlist",
+    "video_count_label": "Videos",
+    "video_welcome_title": "Welcome",
+    "video_maritime_title": "Maritime Zone Properties",
+    "video_diligence_title": "Due Diligence",
+    "video_deed_title": "Sale and Purchase Deed",
+    "video_incorporation_title": "Costa Rica Company Incorporation"
   },
   "contact": {
     "title": "Contact Us",

@@ -68,7 +68,16 @@
     "read_more": "Lire la suite"
   },
   "visual": {
-    "title": "Clare Facio Visual"
+    "eyebrow": "CLARE FACIO VISUAL",
+    "title": "Clare Facio Visual",
+    "subtitle": "Vidéos éducatives sur le droit et l'investissement au Costa Rica — une ressource pour les investisseurs internationaux et les expatriés.",
+    "playlist_label": "Playlist",
+    "video_count_label": "Vidéos",
+    "video_welcome_title": "Bienvenue",
+    "video_maritime_title": "Propriétés en Zone Maritime",
+    "video_diligence_title": "Vérification Préalable",
+    "video_deed_title": "Acte de Vente",
+    "video_incorporation_title": "Création de Société au Costa Rica"
   },
   "contact": {
     "title": "Nous Contacter",

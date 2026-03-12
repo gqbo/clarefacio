@@ -68,7 +68,16 @@
     "read_more": "Leer más"
   },
   "visual": {
-    "title": "Clare Facio Visual"
+    "eyebrow": "CLARE FACIO VISUAL",
+    "title": "Clare Facio Visual",
+    "subtitle": "Videos educativos sobre derecho e inversión en Costa Rica — un recurso para inversionistas internacionales y expatriados.",
+    "playlist_label": "Playlist",
+    "video_count_label": "Videos",
+    "video_welcome_title": "Bienvenida",
+    "video_maritime_title": "Propiedades en Zona Marítima",
+    "video_diligence_title": "Diligencia Debida",
+    "video_deed_title": "Escritura de Compraventa",
+    "video_incorporation_title": "Incorporación de Sociedades en Costa Rica"
   },
   "contact": {
     "title": "Contáctenos",
